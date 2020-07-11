@@ -22,6 +22,6 @@ while(True):
       cv.imshow('window', frame)
       rc,png = cv.imencode('.png',roi_frame)
       msg = png.tobytes()
-      # local_mqttclient.publish("pictures", payload = msg,qos = 0, retain = False)
+      local_mqttclient.publish("pictures", payload = msg,qos = 0, retain = False)
     if cv.waitKey(1) & 0xFF == ord('q'):
       break
